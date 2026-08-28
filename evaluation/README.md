@@ -46,3 +46,11 @@ denoised/001.png              <- YOUR reconstruction (same id, NO suffix)
 ### Output
 
 Running the script prints the mean PSNR, SSIM, delta PSNR, delta SSIM, and the composite score.
+
+
+
+> **Note:** This script is provided for participant-side self-evaluation.
+> It implements the same PSNR, SSIM and composite-score calculation used
+> for official scoring. The organizer-side evaluator additionally applies
+> strict submission validation, including file count, filenames, PNG/RGB
+> format, dimensions and other competition requirements.
