@@ -2,77 +2,92 @@
 
 This folder holds the competition datasets for the low-light image denoising challenge.
 
-## Directory layout
+## Directory Layout
 
-```
+```text
 competition_data/
 ├── public/
 │   ├── ground_truth/
-│   │   001.png
-│   │   ...
-│   │   460.png
+│   │   ├── 001.png
+│   │   ├── ...
+│   │   └── 460.png
 │   ├── noisy/
-│   │   001_noise.png
-│   │   ...
-│   │   460_noise.png
+│   │   ├── 001_noise.png
+│   │   ├── ...
+│   │   └── 460_noise.png
 │   └── denoised/
+│
 └── submissions/
     ├── noisy/
-    │   461_noise.png
-    │   ...
-    │   480_noise.png
+    │   ├── 461_noise.png
+    │   ├── ...
+    │   └── 480_noise.png
     └── denoised/
-        461.png
-        ...
-        480.png
+        ├── 461.png
+        ├── ...
+        └── 480.png
 ```
 
-## How to run the baseline
+## How to Run the Baseline
 
-Save the dataset in the folders above (`public` and `submissions`), then:
+Place the provided dataset in the folders shown above.
 
-### 1. Denoise the public images
+### 1. Denoise the Public Images
 
-```
-python baseline\denoise.py --input_dir competition_data\public\noisy --output_dir competition_data\public\denoised
-```
+From the repository root, run:
 
-### 2. Evaluate the denoised output against ground truth
-
-```
-python evaluation\evaluate.py --noisy_dir competition_data\public\noisy --pred_dir competition_data\public\denoised --gt_dir competition_data\public\ground_truth
+```bash
+python baseline/denoise.py --input_dir competition_data/public/noisy --output_dir competition_data/public/denoised
 ```
 
-## Submission convention
+### 2. Evaluate the Denoised Outputs
 
-- For images **461 to 480**, save your denoised images under:
+Evaluate the generated outputs against the available public ground truth:
 
+```bash
+python evaluation/evaluate.py --noisy_dir competition_data/public/noisy --pred_dir competition_data/public/denoised --gt_dir competition_data/public/ground_truth
 ```
-submissions/denoised/
+
+The evaluation script is provided for participant-side self-evaluation on images for which ground truth is available.
+
+## Preliminary-Round Submission Convention
+
+For the hidden preliminary-round images:
+
+```text
+461_noise.png
+462_noise.png
+...
+480_noise.png
 ```
 
-## Preliminary-round submission convention
+the corresponding denoised outputs must be saved as:
 
-For the hidden preliminary images `461_noise.png` to `480_noise.png`,
-save the denoised outputs as:
-
+```text
 461.png
 462.png
 ...
 480.png
+```
 
 inside:
 
+```text
 competition_data/submissions/denoised/
+```
 
-For the official preliminary-round image submission, package exactly
-these 20 denoised PNG files as:
+For the official preliminary-round image submission, package exactly these 20 denoised PNG files into:
 
+```text
 TeamName.zip
+```
 
 The report must be submitted separately as:
 
+```text
 TeamName_Report.pdf
+```
 
-The team code is maintained in the team's private GitHub repository
-according to the competition submission rules.
+The team's complete solution code must be maintained in the team's private GitHub repository according to the official competition submission rules.
+
+For complete submission requirements, repository requirements, and final-round rules, refer to the official competition document.
