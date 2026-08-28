@@ -2,17 +2,17 @@
 
 ## Installation
 
-Install the required dependencies:
+Install the required dependencies from the repository root:
 
-```
-pip install -r requirements.txt
+```bash
+pip install -r baseline/requirements.txt
 ```
 
 ## How to denoise
 
 Run the classical pipeline (defect-pixel correction + Non-Local Means) with:
 
-```
+```bash
 python baseline/denoise.py --input_dir competition_data/public/noisy --output_dir competition_data/public/denoised
 ```
 
@@ -26,21 +26,21 @@ python baseline/denoise.py --input_dir competition_data/public/noisy --output_di
 
 Example with non-local means strength set to `15`:
 
-```
-python baseline\denoise.py --input_dir competition_data\public\noisy --output_dir competition_data\public\denoised --nlm_h 15
+```bash
+python baseline/denoise.py --input_dir competition_data/public/noisy --output_dir competition_data/public/denoised --nlm_h 15
 ```
 
 ## How to evaluate
 
 Score your denoised output against ground truth using the contestant self-check evaluator:
 
-```
-python evaluation\evaluate.py --noisy_dir competition_data\public\noisy --pred_dir competition_data\public\denoised --gt_dir competition_data\public\ground_truth
+```bash
+python evaluation/evaluate.py --noisy_dir competition_data/public/noisy --pred_dir competition_data/public/denoised --gt_dir competition_data/public/ground_truth
 ```
 
 ## Baseline results (public 460-image set)
 
-```
+```text
 ==============================================
 EVALUATION COMPLETE
 ==============================================
