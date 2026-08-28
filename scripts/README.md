@@ -2,10 +2,18 @@
 
 Use this space to place your code/model/algorithm and document how to run it.
 
-> **Important**: You are **not allowed to change any code between the rounds**.
-> If you are selected to the final stage, you are required to demonstrate
-> that all your submitted work is fully working at that stage via a
-> **live demonstration with explanation**.
+> **Important — Submission Freeze**
+>
+> After the preliminary-round submission deadline, no new commits may be
+> made to the submitted private GitHub repository.
+>
+> The Git commit SHA stated in this README and recorded by the organizers
+> will be treated as the official submitted code version.
+>
+> If external model weights/checkpoints are used, their Google Drive link,
+> expected local path, and SHA-256 checksum must also be stated here.
+> The submitted model/checkpoint must not be modified or replaced after
+> the deadline.
 
 ## How to run
 
@@ -26,3 +34,20 @@ input folder and where your denoised `.png` output should be written).
 
 Describe the expected output format (denoised images in the required
 `<id>.png` naming convention).
+
+## Official Submission Information
+
+Git Commit SHA:
+`<commit SHA>`
+
+Model Checkpoint:
+`<filename or N/A>`
+
+Model Drive Link:
+`<link or N/A>`
+
+Expected Model Path:
+`<path or N/A>`
+
+Model SHA-256:
+`<SHA-256 or N/A>`
