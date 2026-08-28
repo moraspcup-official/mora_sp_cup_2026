@@ -13,7 +13,7 @@ pip install -r requirements.txt
 Run the classical pipeline (defect-pixel correction + Non-Local Means) with:
 
 ```
-python baseline\denoise.py --input_dir competition_data\public\noisy --output_dir competition_data\public\denoised
+python baseline/denoise.py --input_dir competition_data/public/noisy --output_dir competition_data/public/denoised
 ```
 
 ## Options
