@@ -51,4 +51,28 @@ python evaluation\evaluate.py --noisy_dir competition_data\public\noisy --pred_d
 submissions/denoised/
 ```
 
-- For the **final submission**, only the `submissions/` directory is required.
+## Preliminary-round submission convention
+
+For the hidden preliminary images `461_noise.png` to `480_noise.png`,
+save the denoised outputs as:
+
+461.png
+462.png
+...
+480.png
+
+inside:
+
+competition_data/submissions/denoised/
+
+For the official preliminary-round image submission, package exactly
+these 20 denoised PNG files as:
+
+TeamName.zip
+
+The report must be submitted separately as:
+
+TeamName_Report.pdf
+
+The team code is maintained in the team's private GitHub repository
+according to the competition submission rules.
