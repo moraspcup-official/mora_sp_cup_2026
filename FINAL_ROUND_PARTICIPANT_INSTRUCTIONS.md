@@ -58,16 +58,25 @@ Do **not** use an old local copy of your project for verification.
 
 The repository must be freshly cloned in front of the assigned OC member.
 
-Example:
+> **Placeholder note:** Replace values shown inside `< >` with your own repository URL or folder name. Do **not** type the angle brackets themselves.
 
-```powershell
+Clone the submitted private repository:
+
+```text
 git clone <YOUR_PRIVATE_REPOSITORY_URL>
 ```
 
-Enter the cloned repository:
+Then enter the cloned repository:
 
-```powershell
+```text
 cd <REPOSITORY_FOLDER>
+```
+
+For example:
+
+```text
+git clone "https://github.com/username/team-project.git"
+cd "team-project"
 ```
 
 ---
@@ -76,7 +85,7 @@ cd <REPOSITORY_FOLDER>
 
 Inside the freshly cloned repository, run:
 
-```powershell
+```text
 git rev-parse HEAD
 ```
 
@@ -108,7 +117,7 @@ Do not change commits, reset the repository, or checkout another version unless 
 
 Immediately after cloning, and before copying any external model files into the project folder, run:
 
-```powershell
+```text
 git status --porcelain
 ```
 
@@ -120,7 +129,7 @@ This indicates that there are no local modifications to the freshly cloned track
 
 You may also run:
 
-```powershell
+```text
 git status
 ```
 
@@ -134,7 +143,7 @@ The assigned OC member may ask to see either command.
 
 You may also show the latest commit using:
 
-```powershell
+```text
 git log -1 --oneline
 ```
 
@@ -146,7 +155,7 @@ Example:
 
 The full value produced by:
 
-```powershell
+```text
 git rev-parse HEAD
 ```
 
@@ -162,16 +171,16 @@ If your solution uses a trained model/checkpoint stored separately in Google Dri
 
 1. Download the exact submitted model/checkpoint in front of the assigned OC member.
 2. Place the file in the location documented in your submitted README.
-3. Calculate its SHA-256 checksum.
+3. Calculate its SHA-256 checksum using the command for your operating system.
 4. Show the calculated checksum to the OC member.
 
-### PowerShell
+### Windows PowerShell
 
 ```powershell
 Get-FileHash "path\to\model.pth" -Algorithm SHA256
 ```
 
-Example:
+Example output:
 
 ```text
 Algorithm : SHA256
@@ -179,7 +188,25 @@ Hash      : A81D7C9F...
 Path      : ...\model.pth
 ```
 
-The OC member will compare this value with the SHA-256 checksum recorded at the preliminary submission deadline.
+### Windows Command Prompt
+
+```cmd
+certutil -hashfile "path\to\model.pth" SHA256
+```
+
+### Linux
+
+```bash
+sha256sum "path/to/model.pth"
+```
+
+### macOS
+
+```bash
+shasum -a 256 "path/to/model.pth"
+```
+
+The OC member will compare the calculated SHA-256 value with the checksum recorded at the preliminary submission deadline.
 
 ### Required Result
 
@@ -391,40 +418,66 @@ Before arriving at ENTC1 Hall, confirm that:
 
 ## 18. Quick Command Reference
 
+The Git commands below are standard Git commands and work on Windows, Linux, and macOS when Git is installed.
+
+> Replace values shown inside `< >` with your own values. Do **not** type the angle brackets themselves.
+
 ### Clone the submitted repository
 
-```powershell
+```text
 git clone <YOUR_PRIVATE_REPOSITORY_URL>
 ```
 
 ### Enter the repository
 
-```powershell
+```text
 cd <REPOSITORY_FOLDER>
 ```
 
 ### Show the full Git commit SHA
 
-```powershell
+```text
 git rev-parse HEAD
 ```
 
 ### Check for local changes
 
-```powershell
+```text
 git status --porcelain
 ```
 
 ### Show the latest commit
 
-```powershell
+```text
 git log -1 --oneline
 ```
 
-### Calculate model SHA-256
+### Calculate Model SHA-256
+
+Use the command for your operating system.
+
+#### Windows PowerShell
 
 ```powershell
 Get-FileHash "path\to\model.pth" -Algorithm SHA256
+```
+
+#### Windows Command Prompt
+
+```cmd
+certutil -hashfile "path\to\model.pth" SHA256
+```
+
+#### Linux
+
+```bash
+sha256sum "path/to/model.pth"
+```
+
+#### macOS
+
+```bash
+shasum -a 256 "path/to/model.pth"
 ```
 
 ---
